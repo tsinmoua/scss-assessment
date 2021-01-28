@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import data from './activity.json'
+import MultiSelect from './MultiSelect/MultiSelect';
+import SingleSelect from './SingleSelect/SingleSelect';
+import './global-styles.scss';
 
 function App() {
+
+  /*
+    This is a technical assessment designed to get a feel for how you approach problems. 
+  */
+
+  // REQUIREMENTS:
+  // 1) SCSS CHALLENGE - style the single select. Flex your CSS skills. Show some animations; make the feedback a modal, etc. See example screenshot from a course in the SingleSelect folder.
+  // 2) REACTJS CHALLENGE - OPTIONAL - Using hooks, implement the multi select component. Further instructions in MultiSelect.js.
+
+  const [segmentIndex, setSegmentIndex] = useState(0);
+  const currentSegment = data.segments[segmentIndex];
+
+  const handleSegmentComplete = () => {
+      if(data.segments.length > segmentIndex + 1){
+        setSegmentIndex(segmentIndex + 1)
+      }else{
+        alert('all done')
+      }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        currentSegment.type === 'single-select' && 
+        <SingleSelect data={currentSegment} onComplete={handleSegmentComplete}/>
+      }
+      {
+        currentSegment.type === 'multi-select' && 
+        <MultiSelect data={currentSegment} onComplete={handleSegmentComplete}/>
+      }
     </div>
   );
 }
