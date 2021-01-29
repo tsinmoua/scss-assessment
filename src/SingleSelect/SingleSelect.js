@@ -13,6 +13,7 @@ const SingleSelect = props => {
 
     const handleSelect = (i) => {
         if (selected === -1) setSelected(i)
+        console.log(selected)
     }
 
     const selectedOption = props.data.options[selected]
@@ -26,7 +27,14 @@ const SingleSelect = props => {
                 {
                     selected === -1 &&
                     props.data.options.map((option, optionIndex) => {
-                        return <button onClick={() => { handleSelect(optionIndex) }}>{option.text}</button>
+                        return (
+                            <button
+                                key={optionIndex}
+                                onClick={() => { handleSelect(optionIndex) }}
+                            >
+                                {option.text}
+                            </button>
+                        )
                     })
                 }
             </section>
