@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import data from './activity.json'
 import MultiSelect from './MultiSelect/MultiSelect';
 import SingleSelect from './SingleSelect/SingleSelect';
@@ -18,22 +18,22 @@ function App() {
   const currentSegment = data.segments[segmentIndex];
 
   const handleSegmentComplete = () => {
-      if(data.segments.length > segmentIndex + 1){
-        setSegmentIndex(segmentIndex + 1)
-      }else{
-        alert('all done')
-      }
+    if (data.segments.length > segmentIndex + 1) {
+      setSegmentIndex(segmentIndex + 1)
+    } else {
+      alert('all done')
+    }
   }
 
   return (
     <div className="App">
       {
-        currentSegment.type === 'single-select' && 
-        <SingleSelect data={currentSegment} onComplete={handleSegmentComplete}/>
+        currentSegment.type === 'single-select' &&
+        <SingleSelect data={currentSegment} onComplete={handleSegmentComplete} />
       }
       {
-        currentSegment.type === 'multi-select' && 
-        <MultiSelect data={currentSegment} onComplete={handleSegmentComplete}/>
+        currentSegment.type === 'multi-select' &&
+        <MultiSelect data={currentSegment} onComplete={handleSegmentComplete} />
       }
     </div>
   );

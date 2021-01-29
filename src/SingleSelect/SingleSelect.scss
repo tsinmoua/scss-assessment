@@ -1,4 +1,22 @@
 //scss stub for singleselect
-.SingleSelect{
+.SingleSelect {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
 
+    h1 {
+        margin: 5rem 0 5rem 0;
+        font-size: 5rem;
+    }
+
+    section {
+        width: 33vw;
+        margin: auto;
+
+        button {
+            width: 100%;
+            height: 3rem;
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+    }
 }
