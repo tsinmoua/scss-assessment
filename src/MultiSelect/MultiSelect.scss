@@ -1,4 +1,9 @@
 //scss stub for multiselect
-.MultiSelect{
 
+$font: "Fredericka the Great", cursive;
+
+.MultiSelect {
+    font-family: $font;
+    text-align: center;
+    // opacity: transparent;
 }

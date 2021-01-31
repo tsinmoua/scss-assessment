@@ -1,34 +1,52 @@
 //scss stub for singleselect
-.SingleSelect {
 
-    font-family: 'Cabin Sketch', cursive;
-    // color: white;
+$font: "Fredericka the Great", cursive;
+
+.SingleSelect {
+    font-family: $font;
     text-align: center;
 
-    h1 {
-        margin: 5rem 0;
-        font-size: 5rem;
+    .question {
+        margin: 5rem 0 1rem;
+        font-size: 8rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
     }
 
-    section {
-        width: 33vw;
-        margin: auto;
-
-        button {
-            font-family: 'Cabin Sketch', cursive;
-            width: 100%;
-            height: 4rem;
-            margin-top: 1rem;
-            font-size: 3rem;
-            cursor: pointer;
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-60rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
         }
     }
 
-    .correct {
-        background-color: green;
-    }
+    section {
+        width: 40vw;
+        margin: auto;
 
-    .incorrect {
-        background-color: red;
+        button {
+            font-family: $font;
+            width: 15rem;
+            height: 15rem;
+            margin: 1rem 1rem;
+            font-size: 8rem;
+            border-radius: 10%;
+            cursor: pointer;
+            animation: flip 2s;
+            outline: none;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateY(180deg);
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
     }
 }
