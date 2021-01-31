@@ -58,8 +58,10 @@ const SingleSelect = props => {
                             <h1
                                 style={{
                                     fontWeight: 'normal',
+                                    fontSize: '5rem',
+                                    textAlign: 'center',
                                     color: 'black',
-                                    fontFamily: "Fredericka the Great"
+                                    fontFamily: "Fredericka the Great",
                                 }}>
                                 {selectedOption.correct ?
                                     props.data.feedback.correct.header
@@ -70,11 +72,14 @@ const SingleSelect = props => {
                         </DialogTitle>
                         <DialogContent>
                             <DialogContentText id="alert-dialog-description">
-                                <h2 style={{
-                                    fontWeight: 'normal',
-                                    color: 'black',
-                                    fontFamily: "Fredericka the Great"
-                                }}>
+                                <h2
+                                    style={{
+                                        fontWeight: 'normal',
+                                        fontSize: '2rem',
+                                        textAlign: 'center',
+                                        color: 'black',
+                                        fontFamily: "Fredericka the Great",
+                                    }}>
                                     {selectedOption.correct ?
                                         props.data.feedback.correct.body
                                         :
@@ -96,9 +101,6 @@ const SingleSelect = props => {
                             </Button>
                         </DialogActions>
                     </Dialog>
-
-
-
                 </div>
             }
         </div>

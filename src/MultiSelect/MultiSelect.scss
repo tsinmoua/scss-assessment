@@ -5,5 +5,49 @@ $font: "Fredericka the Great", cursive;
 .MultiSelect {
     font-family: $font;
     text-align: center;
-    // opacity: transparent;
+
+    .question {
+        margin: 5rem 15rem 1rem 15rem;
+        font-size: 7rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        font-weight: normal;
+    }
+
+    section {
+        width: 40vw;
+        margin: auto;
+
+        button {
+            font-family: $font;
+            width: 15rem;
+            height: 15rem;
+            margin: 1rem 1rem;
+            font-size: 5rem;
+            border-radius: 10%;
+            cursor: pointer;
+            outline: none;
+            animation: flip 2s;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateY(180deg);
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .submit-button {
+        width: 32rem;
+        height: 4rem;
+        font-family: $font;
+        font-size: 3rem;
+        border-radius: 15px;
+        margin: 1rem;
+        outline: none;
+        cursor: pointer;
+    }
 }

@@ -1,6 +1,6 @@
 // add global styles here if you want.
 
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 
 * {
     box-sizing: border-box;
@@ -8,11 +8,12 @@
     padding: 0;
 }
 
-html {
+body {
     height: 100vh;
-    background-image: linear-gradient(to right bottom, rgba(255, 196, 0, 0.5), rgba(255, 241, 163, 0.5)),
-        url("./images/hero.jpg");
+    overflow-y: hidden;
+    background-image: url("./images/hero.jpg");
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    border: 3rem solid rgb(165, 122, 42);
 }

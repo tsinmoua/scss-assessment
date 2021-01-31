@@ -8,7 +8,8 @@ $font: "Fredericka the Great", cursive;
 
     .question {
         margin: 5rem 0 1rem;
-        font-size: 8rem;
+        font-size: 7rem;
+        font-weight: normal;
         animation-name: moveInLeft;
         animation-duration: 2s;
     }
@@ -33,7 +34,7 @@ $font: "Fredericka the Great", cursive;
             width: 15rem;
             height: 15rem;
             margin: 1rem 1rem;
-            font-size: 8rem;
+            font-size: 5rem;
             border-radius: 10%;
             cursor: pointer;
             animation: flip 2s;
