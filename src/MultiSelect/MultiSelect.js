@@ -37,18 +37,18 @@ const MultiSelect = props => {
 
         if (selected.includes(i)) {
             selected.splice(selected.indexOf(i), 1)
-            options.style.backgroundColor = 'white'
-            options.style.color = 'black'
+            options.style.backgroundColor = 'black'
+            options.style.color = 'white'
 
         } else {
             setSelected([...selected, i])
-            options.style.backgroundColor = 'black'
-            options.style.color = 'white'
+            options.style.backgroundColor = 'white'
+            options.style.color = 'black'
         }
     }
 
     const submit = (event) => {
-        if (selected.includes(0) && selected.includes(1) && selected.includes(3)) {
+        if (selected.includes(0) && selected.includes(1) && selected.includes(3) && !selected.includes(2)) {
             setCorrect(true)
         }
         setOpen(true);
@@ -113,13 +113,14 @@ const MultiSelect = props => {
                         </DialogTitle>
                         <DialogContent>
                             <DialogContentText id="alert-dialog-description">
-                                <h2 style={{
-                                    fontWeight: 'normal',
-                                    fontSize: '2rem',
-                                    textAlign: 'center',
-                                    color: 'black',
-                                    fontFamily: "Fredericka the Great",
-                                }}>
+                                <h2
+                                    style={{
+                                        fontWeight: 'normal',
+                                        fontSize: '2rem',
+                                        textAlign: 'center',
+                                        color: 'black',
+                                        fontFamily: "Fredericka the Great",
+                                    }}>
                                     {correct ?
                                         props.data.feedback.correct.body
                                         :

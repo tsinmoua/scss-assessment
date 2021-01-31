@@ -12,6 +12,7 @@ $font: "Fredericka the Great", cursive;
         font-weight: normal;
         animation-name: moveInLeft;
         animation-duration: 2s;
+        color: white;
     }
 
     @keyframes moveInLeft {
@@ -39,6 +40,13 @@ $font: "Fredericka the Great", cursive;
             cursor: pointer;
             animation: flip 2s;
             outline: none;
+            background-color: black;
+            color: white;
+            border-style: none;
+            &:hover {
+                background-color: white;
+                color: black;
+            }
         }
 
         @keyframes flip {

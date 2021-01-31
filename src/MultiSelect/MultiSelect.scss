@@ -12,10 +12,10 @@ $font: "Fredericka the Great", cursive;
         animation-name: moveInLeft;
         animation-duration: 2s;
         font-weight: normal;
+        color: white;
     }
 
     section {
-        width: 40vw;
         margin: auto;
 
         button {
@@ -28,6 +28,9 @@ $font: "Fredericka the Great", cursive;
             cursor: pointer;
             outline: none;
             animation: flip 2s;
+            background-color: black;
+            color: white;
+            border-style: none;
         }
 
         @keyframes flip {
@@ -49,5 +52,8 @@ $font: "Fredericka the Great", cursive;
         margin: 1rem;
         outline: none;
         cursor: pointer;
+        &:hover {
+            background-color: rgba(255, 235, 235, 0.774);
+        }
     }
 }
