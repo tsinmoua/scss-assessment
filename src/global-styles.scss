@@ -11,9 +11,9 @@
 body {
     height: 100vh;
     overflow-y: hidden;
+    border: 2rem ridge rgb(134, 95, 22);
     background-image: url("./images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border: 2rem ridge rgb(134, 95, 22);
 }

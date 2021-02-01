@@ -1,14 +1,6 @@
 import React, { useState } from 'react'
 import './SingleSelect.scss'
-
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle
-} from '@material-ui/core';
+import Modal from '../components/modal'
 
 const SingleSelect = props => {
 
@@ -48,59 +40,16 @@ const SingleSelect = props => {
             {
                 selected > -1 &&
                 <div className={`feedback ${selectedOption.correct ? 'correct' : 'incorrect'}`}>
-                    <Dialog
+                    <Modal
                         open={open}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                        className='modal'
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                            <h1
-                                style={{
-                                    fontWeight: 'normal',
-                                    fontSize: '5rem',
-                                    textAlign: 'center',
-                                    color: 'black',
-                                    fontFamily: "Fredericka the Great",
-                                }}>
-                                {selectedOption.correct ?
-                                    props.data.feedback.correct.header
-                                    :
-                                    props.data.feedback.incorrect.header
-                                }
-                            </h1>
-                        </DialogTitle>
-                        <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-                                <h2
-                                    style={{
-                                        fontWeight: 'normal',
-                                        fontSize: '2rem',
-                                        textAlign: 'center',
-                                        color: 'black',
-                                        fontFamily: "Fredericka the Great",
-                                    }}>
-                                    {selectedOption.correct ?
-                                        props.data.feedback.correct.body
-                                        :
-                                        props.data.feedback.incorrect.body
-                                    }
-                                </h2>
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button
-                                onClick={props.onComplete}
-                                color="primary"
-                                style={{
-                                    fontFamily: "Fredericka the Great",
-                                    color: 'blue'
-                                }}
-                            >
-                                Next Question
-                            </Button>
-                        </DialogActions>
-                    </Dialog>
+                        onClick={props.onComplete}
+                        correct={selectedOption.correct}
+                        correctHeader={props.data.feedback.correct.header}
+                        incorrectHeader={props.data.feedback.incorrect.header}
+                        correctFeedback={props.data.feedback.correct.body}
+                        incorrectFeedback={props.data.feedback.incorrect.body}
+                        text='Next Question'
+                    />
                 </div>
             }
         </div>

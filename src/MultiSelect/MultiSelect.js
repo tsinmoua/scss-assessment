@@ -1,14 +1,6 @@
 import React, { useState } from 'react'
 import './MultiSelect.scss'
-
-import {
-    Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle
-} from '@material-ui/core';
+import Modal from '../components/modal'
 
 // this is a stub for you to develop the following
 
@@ -89,59 +81,16 @@ const MultiSelect = props => {
 
             {
                 <div className={`feedback ${correct ? 'correct' : 'incorrect'}`}>
-                    <Dialog
+                    <Modal
                         open={open}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                        className='modal'
-                    >
-                        <DialogTitle id="alert-dialog-title">
-                            <h1
-                                style={{
-                                    fontWeight: 'normal',
-                                    fontSize: '5rem',
-                                    textAlign: 'center',
-                                    color: 'black',
-                                    fontFamily: "Fredericka the Great",
-                                }}>
-                                {correct ?
-                                    props.data.feedback.correct.header
-                                    :
-                                    props.data.feedback.incorrect.header
-                                }
-                            </h1>
-                        </DialogTitle>
-                        <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-                                <h2
-                                    style={{
-                                        fontWeight: 'normal',
-                                        fontSize: '2rem',
-                                        textAlign: 'center',
-                                        color: 'black',
-                                        fontFamily: "Fredericka the Great",
-                                    }}>
-                                    {correct ?
-                                        props.data.feedback.correct.body
-                                        :
-                                        props.data.feedback.incorrect.body
-                                    }
-                                </h2>
-                            </DialogContentText>
-                        </DialogContent>
-                        <DialogActions>
-                            <Button
-                                onClick={reload}
-                                color="primary"
-                                style={{
-                                    fontFamily: "Fredericka the Great",
-                                    color: 'blue'
-                                }}
-                            >
-                                Try Quiz Again
-                            </Button>
-                        </DialogActions>
-                    </Dialog>
+                        onClick={reload}
+                        correct={correct}
+                        correctHeader={props.data.feedback.correct.header}
+                        incorrectHeader={props.data.feedback.incorrect.header}
+                        correctFeedback={props.data.feedback.correct.body}
+                        incorrectFeedback={props.data.feedback.incorrect.body}
+                        text='Try Quiz Again'
+                    />
                 </div>
             }
         </div>
